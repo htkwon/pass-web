@@ -8,10 +8,10 @@ import java.util.List;
 public class ChartDataDto {
 
     private List<String> labels;
-    private List<Integer> attendedCount;
-    private List<Integer> cancelledCount;
+    private List<Long> attendedCount;
+    private List<Long> cancelledCount;
 
-    public ChartDataDto(List<String> labels, List<Integer> attendedCount, List<Integer> cancelledCount){
+    public ChartDataDto(List<String> labels, List<Long> attendedCount, List<Long> cancelledCount){
         this.labels = labels;
         this.attendedCount = attendedCount;
         this.cancelledCount = cancelledCount;

@@ -25,7 +25,7 @@ public class PassEntity extends BaseEntity {
     private String userId;
 
     @Enumerated(EnumType.STRING)
-    private PassStatus passStatus;
+    private PassStatus status;
 
     private int remainingCount;
 

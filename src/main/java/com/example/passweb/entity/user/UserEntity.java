@@ -21,11 +21,11 @@ public class UserEntity extends BaseEntity {
     private String userName;
 
     @Enumerated(EnumType.STRING)
-    private UserStatus userStatus;
+    private UserStatus status;
 
     private String phone;
 
-    private String meata;
+    private String meta;
 
 
 }

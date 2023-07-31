@@ -7,6 +7,7 @@ import com.example.passweb.service.statistics.StatisticsService;
 import com.example.passweb.service.user.UserGroupMappingService;
 import com.example.passweb.status.BulkPassStatus;
 import com.example.passweb.util.LocalDateTimeUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,13 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 import java.time.LocalDateTime;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/admin")
 public class AdminViewController {
 
-    private BulkPassService bulkPassService;
-    private PackageService packageService;
-    private UserGroupMappingService userGroupMappingService;
-    private StatisticsService statisticsService;
+    private final BulkPassService bulkPassService;
+    private final PackageService packageService;
+    private final UserGroupMappingService userGroupMappingService;
+    private final StatisticsService statisticsService;
 
     @GetMapping
     public ModelAndView home(ModelAndView modelAndView, @RequestParam("to") String toString){

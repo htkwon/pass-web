@@ -13,7 +13,7 @@ public interface StatisticsRepository extends JpaRepository<StatisticsEntity,Lon
 
 
 
-    @Query(value = "SELECT new com.example.passweb.dto.statistics.AggregatedStatisticsDto(s.statisticsAt,SUM(s.allCount),SUM(a.attendedCount),SUM(s.cancelledCount)) " +
+    @Query(value = "SELECT new com.example.passweb.dto.statistics.AggregatedStatisticsDto(s.statisticsAt,SUM(s.allCount),SUM(s.attendedCount),SUM(s.cancelledCount)) " +
                     "FROM StatisticsEntity  s "+
                     "WHERE s.statisticsAt BETWEEN :from AND :to "+
                     "GROUP BY s.statisticsAt")

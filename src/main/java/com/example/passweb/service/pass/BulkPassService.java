@@ -8,14 +8,16 @@ import com.example.passweb.entity.pass.BulkPassEntity;
 import com.example.passweb.repository.BulkPassRepository;
 import com.example.passweb.repository.PackageRepository;
 import com.example.passweb.status.BulkPassStatus;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class BulkPassService {
-    private BulkPassRepository bulkPassRepository;
-    private PackageRepository packageRepository;
+    private final BulkPassRepository bulkPassRepository;
+    private final PackageRepository packageRepository;
 
     public List<BulkPassDto> getAllBulkPasses(){
         List<BulkPassEntity> entities = bulkPassRepository.findAllOrderByStartedAtDesc();

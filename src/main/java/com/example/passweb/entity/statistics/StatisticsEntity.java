@@ -20,9 +20,9 @@ public class StatisticsEntity {
 
     private LocalDateTime statisticsAt;
 
-    private int allCount;
-    private int attendedCount;
-    private int cancelledCount;
+    private Long allCount;
+    private Long attendedCount;
+    private Long cancelledCount;
 
 
 

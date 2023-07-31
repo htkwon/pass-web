@@ -13,7 +13,7 @@ public interface PassModelMapper {
 
     PassModelMapper INSTANCE = Mappers.getMapper(PassModelMapper.class);
 
-    @Mapping(target="packageName",source ="PackageEntity.packageName")
+    @Mapping(target="packageName",source = "packageEntity.packageName")
     PassDto map(PassEntity passEntity);
 
     List<PassDto> map(List<PassEntity> passEntities);

@@ -28,7 +28,7 @@ public class BulkPassService {
         PackageEntity entity = packageRepository.findById(bulkPassRequest.getPackageSeq())
                 .orElseThrow();
         BulkPassEntity bulkPassEntity = BulkPassModelMapper.INSTANCE.map(bulkPassRequest);
-        bulkPassEntity.setBulkPassStatus(BulkPassStatus.READY);
+        bulkPassEntity.setStatus(BulkPassStatus.READY);
         bulkPassEntity.setCount(entity.getCount());
         bulkPassEntity.setEndedAt(entity.getPeriod());
 

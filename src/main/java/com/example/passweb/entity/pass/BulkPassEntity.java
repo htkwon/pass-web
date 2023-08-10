@@ -22,7 +22,7 @@ public class BulkPassEntity {
     private String userGroupId;
 
     @Enumerated(EnumType.STRING)
-    private BulkPassStatus bulkPassStatus;
+    private BulkPassStatus status;
 
     private Integer count;
 

@@ -5,7 +5,6 @@ import com.example.passweb.service.pack.PackageService;
 import com.example.passweb.service.pass.BulkPassService;
 import com.example.passweb.service.statistics.StatisticsService;
 import com.example.passweb.service.user.UserGroupMappingService;
-import com.example.passweb.status.BulkPassStatus;
 import com.example.passweb.util.LocalDateTimeUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

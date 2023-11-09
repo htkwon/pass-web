@@ -29,7 +29,7 @@ public class BulkPassService {
                 .orElseThrow();
         BulkPassEntity bulkPassEntity = BulkPassModelMapper.INSTANCE.map(bulkPassRequest);
         bulkPassEntity.setStatus(BulkPassStatus.READY);
-        bulkPassEntity.setCount(entity.getCount());
+        bulkPassEntity.setCount(60);
         bulkPassEntity.setEndedAt(entity.getPeriod());
 
         bulkPassRepository.save(bulkPassEntity);

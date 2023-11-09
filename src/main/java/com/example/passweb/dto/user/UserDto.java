@@ -1,9 +1,9 @@
 package com.example.passweb.dto.user;
 
 import com.example.passweb.status.UserStatus;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class UserDto {
     private String userId;
     private String userName;

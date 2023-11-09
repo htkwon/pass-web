@@ -1,11 +1,13 @@
 package com.example.passweb.dto.pass;
 
 import com.example.passweb.status.PassStatus;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 public class PassDto {
     private Long passSeq;
     private Long packageSeq;

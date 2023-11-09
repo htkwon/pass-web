@@ -1,16 +1,17 @@
 package com.example.passweb.entity.pack;
 
 import com.example.passweb.entity.BaseEntity;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "package")
 public class PackageEntity extends BaseEntity {
 
@@ -21,7 +22,6 @@ public class PackageEntity extends BaseEntity {
     private String packageName;
     private Integer count;
     private Integer period;
-
 
 
 }

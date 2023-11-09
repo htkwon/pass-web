@@ -16,12 +16,10 @@ public class PassService {
     private final PassRepository passRepository;
 
 
-
     public List<PassDto> getPasses(String userId){
         List<PassEntity> passEntities = passRepository.findByUserId(userId);
         return PassModelMapper.INSTANCE.map(passEntities);
     }
-
 
 
 }

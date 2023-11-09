@@ -1,11 +1,13 @@
 package com.example.passweb.dto.pass;
 
 import com.example.passweb.util.LocalDateTimeUtils;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@NoArgsConstructor
 public class BulkPassRequest {
     private Long packageSeq;
     private String userGroupId;

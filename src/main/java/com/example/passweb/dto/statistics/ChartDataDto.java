@@ -1,10 +1,10 @@
 package com.example.passweb.dto.statistics;
 
-import lombok.Data;
+import lombok.Getter;
 
 import java.util.List;
 
-@Data
+@Getter
 public class ChartDataDto {
 
     private List<String> labels;

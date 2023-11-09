@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<li id="code" th:text="|${code}|">code</li>
+<li id="access_token" th:text="|${access_token}|">code</li>
+<li id="uuid" th:text="|사용자정보 = ${userInfo}|">code</li>
+<li th:text="|동의정보 = ${agreementInfo}|">code</li>
+<a href="https://kauth.kakao.com/oauth/logout?client_id=c5ea7bc8ad89501f0ac8eb68827665b3&logout_redirect_uri=http://localhost:8081/kakao/oauth">로그아웃</a>
+
+<script>
+var access_token = document.getElementById("access_token").textContent;
+sessionStorage.setItem("access_token",access_token)
+var code = document.getElementById("code").textContent;
+sessionStorage.setItem("code",code);
+var uuid = document.getElementById("uuid").textContent;
+var regex = /(\d+)/g;
+var matches = uuid.match(regex);
+var uuidReal = matches ? matches[0] : "";
+sessionStorage.setItem("uuid",uuidReal);
+</script>
+
+</body>
+</html>

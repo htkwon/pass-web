@@ -2,16 +2,13 @@ package com.example.passweb.entity.user;
 
 import com.example.passweb.entity.BaseEntity;
 import com.example.passweb.status.UserStatus;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Setter
 @Getter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "user")
 public class UserEntity extends BaseEntity {
 
@@ -25,7 +22,9 @@ public class UserEntity extends BaseEntity {
 
     private String phone;
 
-    private String meta;
+    //    private String meta;
+    private String uuid;
 
+    public void setUuid(String uuid){this.uuid = uuid;}
 
 }

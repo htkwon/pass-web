@@ -1,12 +1,12 @@
 package com.example.passweb.dto.statistics;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class AggregatedStatisticsDto {

@@ -25,30 +25,29 @@ public class AdminViewController {
     private final StatisticsService statisticsService;
 
     @GetMapping
-    public ModelAndView home(ModelAndView modelAndView, @RequestParam("to") String toString){
+    public ModelAndView home(ModelAndView modelAndView, @RequestParam("to") String toString) {
         LocalDateTime to = LocalDateTimeUtils.parseDate(toString);
 
-         modelAndView.addObject("chartData",statisticsService.makeChatData(to));
-         modelAndView.setViewName("admin/index");
-         return modelAndView;
+        modelAndView.addObject("chartData", statisticsService.makeChatData(to));
+        modelAndView.setViewName("admin/index");
+        return modelAndView;
     }
 
     @GetMapping("/bulk-pass")
-    public ModelAndView registerBulkPass(ModelAndView modelAndView){
-        modelAndView.addObject("bulkPasses",bulkPassService.getAllBulkPasses());
-        modelAndView.addObject("packages",packageService.getAllPackages());
-        modelAndView.addObject("userGroupIds",userGroupMappingService.getAllUserGroupIds());
-        modelAndView.addObject("request",new BulkPassRequest());
+    public ModelAndView registerBulkPass(ModelAndView modelAndView) {
+        modelAndView.addObject("bulkPasses", bulkPassService.getAllBulkPasses());
+        modelAndView.addObject("packages", packageService.getAllPackages());
+        modelAndView.addObject("userGroupIds", userGroupMappingService.getAllUserGroupIds());
+        modelAndView.addObject("request", new BulkPassRequest());
         modelAndView.setViewName("admin/bulk-pass");
         return modelAndView;
     }
 
     @PostMapping("/bulk-pass")
-    public String addBulkPass(@ModelAttribute("request") BulkPassRequest request, Model model){
+    public String addBulkPass(@ModelAttribute("request") BulkPassRequest request) {
         bulkPassService.addBulkPass(request);
         return "redirect:/admin/bulk-pass";
     }
-
 
 
 }

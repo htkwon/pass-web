@@ -1,9 +1,7 @@
 package com.example.passweb.entity.pass;
 
 import com.example.passweb.status.BulkPassStatus;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,7 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@ToString
+@NoArgsConstructor
 @Table(name = "bulk_pass")
 public class BulkPassEntity {
     @Id
@@ -29,16 +27,13 @@ public class BulkPassEntity {
     private LocalDateTime startedAt;
     private LocalDateTime endedAt;
 
-    public void setEndedAt(Integer period){
-        if(period == null){
+    public void setEndedAt(Integer period) {
+        if (period == null) {
             return;
         }
         this.endedAt = this.startedAt.plusDays(period);
     }
 
-    public void setEndedAt(LocalDateTime endedAt){
-        this.endedAt = endedAt;
-    }
 
 
 }

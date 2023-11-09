@@ -1,14 +1,11 @@
 package com.example.passweb.entity.user;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Setter
 @Getter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserGroupMappingId implements Serializable {
     private String userGroupId;
     private String userId;

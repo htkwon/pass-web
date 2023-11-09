@@ -1,16 +1,13 @@
 package com.example.passweb.entity.statistics;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "statistics")
 public class StatisticsEntity {
 
@@ -23,7 +20,6 @@ public class StatisticsEntity {
     private int allCount;
     private int attendedCount;
     private int cancelledCount;
-
 
 
 }

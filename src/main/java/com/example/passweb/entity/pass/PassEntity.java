@@ -4,17 +4,14 @@ package com.example.passweb.entity.pass;
 import com.example.passweb.entity.BaseEntity;
 import com.example.passweb.entity.pack.PackageEntity;
 import com.example.passweb.status.PassStatus;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "pass")
 public class PassEntity extends BaseEntity {
     @Id
@@ -37,7 +34,6 @@ public class PassEntity extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "packageSeq", insertable = false, updatable = false)
     private PackageEntity packageEntity;
-
 
 
 }

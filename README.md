@@ -1,51 +1,31 @@
-#pass-web
-PT 이용권 관리 서비스 뷰를 보여주는 Web Project .
+# pass-web
+앞서 개발한 [PT 이용권 관리 Batch 프로젝트](https://github.com/htkwon/batch-project) 와 연동한 간단한 Web Project 입니다.
 
-# 개발환경
+<img width="547" alt="batch 다이어그램" src="https://github.com/htkwon/pass-web/assets/117131575/3a0f29e2-befe-48a5-89df-5626c64356e1">
+
+
+
+# 기술스택
 - Java 17
 - Spring boot 2.7.14
 - Gradle
-- MySQL (Docker)
-- JPA
+- MySQL
+- Spring Data JPA
 - Lombok
-- ModelMapper
+- Mapstruct
 - Thymeleaf
 
 
-1. 관리자가 Admin Page에서 이용권을 일괄 지급 등 하고 Batch에서 이용권 일괄 지이 되고, 사용자는 이용권 목록 조회에서 해당 이용을 조회 가능.
-2. Batch에서 통계 데이터 생성 Job 실행 후 Admin Page에서 통계 차트 조회 가능
--> REST API로 호출하여 Job을 실행하기 위해 batch-project에서 JobLauncher 사용
+# 서비스 요구사항 
 
-
-# 요구사항
-<이용권 관련>
-1. 사용자는 N개의 이용권을 가질 수 있다.
-2. 이용권은 횟수가 모두 소진되거나 이용기간이 지나면 만료된다.
-3. 이용권 만료 전 사용자에게 알림을 준다.
-4. 업체에서 원하는 시간을 설정하여, 일괄로 사용자에게 이용권을 지급할 수 있다.
-
-<수업 관련>
-1. 예약된 수업 10분 전 출석 안내 알람을 준다.
-2. 수업 종료 시간 시점 수업을 예약한 학생의 이용권 횟수를 일괄로 차감한다.(-1)
-
-<통계 관련>
-1. 사용자의 수업 예약, 출석, 이용권 횟수 등의 데이터로 유의미한 통계 데이터를 만든다.
-
-
-# 서비스 요구사항
-
-<BATCH>
-- 이용권 만료 
-- 이용권 일괄 지급 
-- 수업 전 알림 
-- 수업 후 이용권 차감 
-- 통계 데이터 구축 
-<VIEW>
+VIEW
 - 사용자 이용권 조회 페이지
 - 관리자 이용권 등록 페이지
 - 관리자 통계 조회 페이지
+- 카카오 로그인 페이지
 
-<API>
+API
 - 사용자 이용권 조회 API 
 - 관리자 이용권 등록 API
 - 관리자 통계 조회 API
+- 카카오 로그인 API
